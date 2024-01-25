@@ -9,6 +9,17 @@
     <div class="content">
         <h1>Update Task</h1>
 
+        {# Flash messages for task operations #}
+        <div class="flash-messages">
+            {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                    {% for message in messages %}
+                        <div class="flash-message">{{ message }}</div>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+        </div>
+
         <form action="/update/{{task.id}}" method="post" class="update-form">
             <label for="content">Task:</label>
             <input type="text" name="content" id="content" value="{{task.content}}" class="task-input">

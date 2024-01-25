@@ -8,6 +8,18 @@
 {% block body %}
     <div class="content">
         <h1>Task Master</h1>
+        
+        {# Flash messages for task operations #}
+        <div class="flash-messages">
+            {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                    {% for message in messages %}
+                        <div class="flash-message">{{ message }}</div>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+        </div>
+        
         {% if tasks|length < 1 %}
             <h4>Add a task below</h4>
         {% else %}

@@ -129,3 +129,18 @@ label {
         opacity: 1;
     }
 }
+
+
+.flash-messages {
+    margin: 20px 0;
+}
+
+.flash-message {
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    background-color: #3498db; /* Blue background color */
+    color: #fff;
+    font-weight: bold;
+    text-align: center;
+}
